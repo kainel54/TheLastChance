@@ -36,7 +36,6 @@ public class CustomPoolingItemEditor : Editor
     public override void OnInspectorGUI()
     {
         StyleSetup();
-        //디스크에있는 정보를 나한테 다시 직렬화해서 불러와라.
         serializedObject.Update();
 
         EditorGUILayout.BeginHorizontal("HelpBox");
@@ -55,7 +54,6 @@ public class CustomPoolingItemEditor : Editor
 
                     if(EditorGUI.EndChangeCheck())
                     {
-                        //target 시리얼라이즈되지 않은 타겟 오브젝트를 말해.
                         string assetPath = AssetDatabase.GetAssetPath(target);
                         string newName = $"Pool_{_enumNameProp.stringValue}";
                         serializedObject.ApplyModifiedProperties();
